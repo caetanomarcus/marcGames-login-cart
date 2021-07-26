@@ -31,7 +31,7 @@ function SideConnected(props){
         <Container>
             <h2>Bem vind@, {props.user.nome}</h2>
             <h2>Sua entrega será para:</h2>
-            <h2>{props.user.adress?.logradouro}, Bairro {props.user.adress?.bairro}, {props.user.adress?.cidade}, {props.user.adress.estado}</h2>
+            <h2>{props.user.adress?.logradouro}, Bairro {props.user.adress?.bairro}, {props.user.adress?.cidade}, {props.user.adress?.estado}</h2>
            
         </Container>
     )

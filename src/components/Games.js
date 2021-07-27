@@ -14,72 +14,92 @@ const Games = [
     {
         id : 1 ,
         name: 'Cyberpunk 2077',
-        price: 'R$ 68,99',
+        initialPrice: 68.99,
+        price: 68.99,
         oldPrice: 'R$ 249,90',
-        cover: cyberpunk
+        cover: cyberpunk,
+        quantity: 1
     },
     {
         id :  2,
         name: 'Ghost of Tsushima',
-        price: 'R$ 199,90',
-        oldPrice: 'R$ 299,90',
-        cover: ghost
+        price: 199.90,
+        initialPrice:199.90,
+        oldPrice: 'R$ 299.90',
+        cover: ghost,
+        quantity: 1
     },
     {
         id : 3,
         name: 'The Last of Us Part II',
-        price: 'R$ 189,89',
+        price: 189.89,
+        initialPrice: 189.90,
         oldPrice: 'R$ 249,90',
-        cover: lastofus
+        cover: lastofus,
+        quantity: 1
     },
     {
         id :  4,
         name: 'Grand Theft Auto V',
-        price: 'R$ 138,49',
+        price: 138.49,
+        initialPrice: 138.49,
         oldPrice: 'R$ 229,90',
-        cover: gta
+        cover: gta,
+        quantity: 1
     },
     {
         id : 5 ,
         name: 'Days Gone',
-        price: 'R$ 58,89',
+        price: 58.89,
+        initialPrice: 58.89,
         oldPrice: 'R$ 249,90',
-        cover: daysgone
+        cover: daysgone,
+        quantity: 1
     },
     {
         id : 6 ,
         name: 'Resident Evil Village',
-        price: '279,90',
+        price: 279.90,
+        initialPrice: 279.90,
         oldPrice: 'R$ 299,90',
-        cover: resident
+        cover: resident,
+        quantity: 1
     },
     {
         id :  7,
         name: 'Read Dead Redemption II',
-        price: 'R$ 157,90',
+        price: 157.90,
+        initialPrice: 157.90,
         oldPrice: 'R$ 249,90',
-        cover: reddead
+        cover: reddead,
+        quantity: 1
     },
     {
         id :  8,
         name: "Assassin's Creed Valhalla",
-        price: 'R$ 229,99',
+        price: 229.99,
+        initialPrice: 229.99,
         oldPrice: 'R$ 299,90',
-        cover: ac
+        cover: ac,
+        quantity: 1
     },
     {
         id :  9,
         name: "Marvel's Spider-man: Miles Morales",
-        price: 'R$ 239,90',
+        price: 239.90,
+        initialPrice: 239.90,
         oldPrice: 'R$ 249,90',
-        cover: spider
+        cover: spider,
+        quantity: 1
     },
     {
         id :  10,
         name: 'Nioh 2',
-        price: 'R$ 97,99',
+        price: 97.99,
+        initialPrice: 97.99,
         oldPrice: 'R$ 229,90',
-        cover: nioh2
+        cover: nioh2,
+        quantity: 1
     },
 ]
 

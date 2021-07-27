@@ -22,7 +22,7 @@ export default function Cart (){
         if(data !== null){
             data = JSON.parse(data);
             setUser(data);
-            localStorage.clear('userData')
+            //localStorage.clear('userData')
         } else {
             history.push('/')
         }
@@ -36,7 +36,7 @@ export default function Cart (){
         <>
        <Header />
        <Container>
-       <Main />
+       <Main  />
        <Side user={user} />
        </Container>
        </>

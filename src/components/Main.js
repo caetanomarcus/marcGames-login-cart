@@ -1,7 +1,7 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Games from "./Games.js";
 import styled from "styled-components";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 import { addID } from "../reduxConfig/actions/index.js";
 
 const Container = styled.div`
@@ -35,19 +35,19 @@ const Card = styled.div`
     width: 90%;
   }
 
-  button{
-      background-color: orange;
-      border-style: none;
-      outline: none;
-      height: 2.5rem;
-      width: 10vw;
-      border-radius: .3rem;
-      border: solid 1px #000101;
-      cursor: pointer;
+  button {
+    background-color: orange;
+    border-style: none;
+    outline: none;
+    height: 2.5rem;
+    width: 10vw;
+    border-radius: 0.3rem;
+    border: solid 1px #000101;
+    cursor: pointer;
 
-      &:active{
-          transform: scale(.9);
-      }
+    &:active {
+      transform: scale(0.9);
+    }
   }
 `;
 
@@ -66,43 +66,32 @@ const Price = styled.p`
   text-shadow: 0 0 3px #fc8c14;
 `;
 
-
-function mapDispatchToProps (dispatch){
+function mapDispatchToProps(dispatch) {
   return {
-    addID: (id) => dispatch(addID(id))
-  }
+    addID: (id) => dispatch(addID(id)),
+  };
 }
 
- function MainConnected() {
+function MainConnected(props) {
   const [games] = useState(Games);
-  const [count, setCount]= useState(0)
 
-
-  
-  
-
-  const handleClick = (game, e, props) => {
+  const handleClick = (game, e) => {
     e.preventDefault();
-    setCount(count + 1)
-    addID(game.id)
-    
+
+    props.addID([game]); //to compartilhando uma lista de ids, mas preciso compartilhar os objetos todos
 
     const data = game.id;
-    console.log(game.id)
 
-    let sendData = []
+    let sendData = [];
 
-    if(!localStorage.getItem('gameData')){
-        localStorage.setItem('gameData', JSON.stringify([data]))
+    if (!localStorage.getItem("gameData")) {
+      localStorage.setItem("gameData", JSON.stringify([data]));
     } else {
-        sendData = JSON.parse(localStorage.getItem('gameData')) || []
-        sendData.push(data)
-        localStorage.setItem('gameData', JSON.stringify(sendData))
-       
+      sendData = JSON.parse(localStorage.getItem("gameData")) || [];
+      sendData.push(data);
+      localStorage.setItem("gameData", JSON.stringify(sendData));
     }
-    
-   
-}
+  };
   return (
     <Container>
       {games.map((game) => {
@@ -112,9 +101,9 @@ function mapDispatchToProps (dispatch){
             <div>
               <Title>{game.name}</Title>
               <OldPrice>{game.oldPrice}</OldPrice>
-              <Price>{game.price}</Price>
+              <Price>R$ {game.price.toFixed(2).toString().replace('.', ',')}</Price>
             </div>
-            <button onClick={(e) => handleClick(game,e)} >Comprar</button>
+            <button onClick={(e) => handleClick(game, e)}>Comprar</button>
           </Card>
         );
       })}
@@ -122,6 +111,6 @@ function mapDispatchToProps (dispatch){
   );
 }
 
-const Main = connect(null, mapDispatchToProps)(MainConnected)
+const Main = connect(null, mapDispatchToProps)(MainConnected);
 
-export default Main
+export default Main;
